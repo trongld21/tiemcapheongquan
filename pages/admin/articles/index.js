@@ -13,6 +13,7 @@ import useNotification from '@/hooks/useNotification';
 import getServerSideProps from '@/lib/adminServerProps';
 import removeDiacritics from '@/components/Utils/removeDiacritics';
 import AdminPagination from '@/components/Utils/AdminPagination';
+import { signOut } from 'firebase/auth';
 
 function Articles() {
     const [data, setData] = useState([]);
@@ -61,14 +62,16 @@ function Articles() {
     const fetchData = async () => {
         try {
             const res = await apiArticle.GetAllArticleAdmin();
-            if (res && res.success) {
-                setData(res.data);
-                setSearchArticle(res.data);
+            // console.log(res)
+            if (res) {
+                setData(res);
+                setSearchArticle(res);
             }
         } catch (error) {
             console.error('Fetch Data Fail');
         }
     };
+
     // Fetch data every component mount
     useEffect(() => {
         fetchData();
@@ -98,19 +101,20 @@ function Articles() {
                 </section>
 
                 <section className="grid grid-cols-1 gap-10 items-start">
-                    {itemsToShow &&
-                        itemsToShow.map((item) => {
+                    {data &&
+                        data.map((item) => {
+                            console.log(item)
                             return (
                                 <ArticleItem
-                                    key={item.articleId}
+                                    key={item.id}
                                     urlThumbnail={item.thumbnail}
                                     title={item.title}
-                                    slug={item.articleId}
+                                    slug={item.id}
                                     author={item.userName}
                                     description={item.content}
                                     createdDate={item.createdAt}
                                     published={item.isPublish}
-                                    id={item.articleId}
+                                    id={item.id}
                                     onDelete={(itemId) => handleDeleteArticle(itemId)}
                                 />
                             );

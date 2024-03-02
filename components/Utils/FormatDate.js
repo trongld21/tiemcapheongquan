@@ -3,9 +3,10 @@ import moment from 'moment';
 import 'moment/locale/vi';
 
 export const formatDateForInput = (dateTime) => {
-    const date = parseISO(dateTime);
-    const formattedDate = format(date, 'yyyy-MM-dd');
-    return formattedDate;
+    // const date = parseISO(dateTime);
+    // const formattedDate = format(date, 'yyyy-MM-dd');
+    // return formattedDate;
+    return dateTime;
 };
 
 export const formatDateForHtml = (dateTime) => {

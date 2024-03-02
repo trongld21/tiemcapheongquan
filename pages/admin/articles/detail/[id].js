@@ -35,12 +35,14 @@ function DetailArticle() {
     const getData = async (id) => {
         try {
             const res = await apiArticle.GetArticleById(id);
-            if (res && res.success) {
-                setData(res.data);
+            // console.log(res)
+            if (res) {
+                setData(res);
             }
         } catch (error) {
             console.error('Fetch Data Fail');
         }
+
     };
 
     return (
