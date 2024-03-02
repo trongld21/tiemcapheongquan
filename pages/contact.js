@@ -62,8 +62,8 @@ function ContactUs() {
                             />
                             Địa chỉ
                         </div>
-                        <p className="font-medium text-lg text-[#A69689] flex text-center">
-                            600 Nguyễn Văn Cừ nối dài, An Bình, Ninh Kiều, Cần Thơ
+                        <p className="font-medium text-lg text-[#A69689] flex text-center capitalize">
+                            cuối hẻm 583, đường 30/4, phường Hưng Lợi, quận Ninh Kiều, TP Cần Thơ, Việt Nam
                         </p>
                     </div>
                     <div className="col-1/4 flex flex-col flex-1 items-center">
@@ -90,7 +90,7 @@ function ContactUs() {
                             </div>{' '}
                             Điện thoại
                         </div>
-                        <p className="font-medium text-lg text-[#A69689]">0337336138</p>
+                        <a className="font-medium text-lg text-[#A69689]" href="callto:0937296565">0937296565</a>
                     </div>
                     <div className="col-1/4 flex flex-col flex-1 items-center justify-center">
                         {/* <Image className="text-center" alt="svg" src="/svgs/mail.svg" width={16} height={20} /> */}
@@ -115,7 +115,7 @@ function ContactUs() {
                             </div>
                             Mail
                         </div>
-                        <p className="font-medium text-lg text-[#A69689]">tkdecor123@gmail.com</p>
+                        <p className="font-medium text-lg text-[#A69689] capitalize">đang cập nhật</p>
                     </div>
                 </div>
                 <div className="text-center items-center justify-center border-black border-dashed border-2 rounded-xl">

@@ -78,7 +78,7 @@ function Header() {
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <img className="h-8 w-auto" src="/img/logoTKDecor.png" alt="" />
+                        <img className="h-8 w-auto" src="/assets/images/tiemcapheongquan/logo.png" alt="logo tiệm cà phê ông quan" />
                     </a>
                 </div>
                 <div className="flex lg:hidden">
@@ -180,7 +180,7 @@ function Header() {
                                         className="absolute inset-y-0 left-0 flex items-center pl-3 "
                                         onClick={searchProduct}
                                     >
-                                        <img className="h-6" src="/assets/svg/search.svg" alt="logo" />
+                                        <img className="h-6" src="/assets/images/tiemcapheongquan/logo.png" alt="logo tiệm cà phê ông quan" />
                                     </div>
                                     <input
                                         id="search"

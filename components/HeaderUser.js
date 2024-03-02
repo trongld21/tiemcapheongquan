@@ -119,38 +119,38 @@ function HeaderUser() {
     };
 
     return (
-        <header className="flex max-sm:flex-col md:flex-col lg:px-2 lg:h-[70px] h-fit z-50 shadow sticky top-0 bg-white">
+        <header className="flex max-sm:flex-col md:flex-col lg:px-2 lg:h-[70px] z-50 shadow sticky top-0 h-fit bg-[#594633] justify-between items-center px-8">
             <div className="flex justify-between pt-[1rem] pb-5 lg:px-2 w-full">
                 <div className="w-1/6 max-sm:w-full flex items-center">
-                    <Link href="/">
-                        <img src="/assets/svg/logo_white.svg" alt="TKDecor Logo" />
+                    <Link href="/" className="ml-8">
+                        <img className="h-12 scale-150" src="/assets/images/tiemcapheongquan/logo.png" alt="logo tiệm cà phê ông quan" />
                     </Link>
                 </div>
                 <div className="w-5/6 lg:w-4/5 max-sm:hidden flex text-xs xl:text-sm font-bold items-center justify-between px-2">
-                    <section className="flex gap-3 lg:gap-6">
+                    <section className="flex justify-between gap-16">
                         <Link href="/">
-                            <p className="py-1 border-b-2 border-transparent hover:border-[#A69689]">TRANG CHỦ</p>
+                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TRANG CHỦ</p>
                         </Link>
                         <Link href="/product" id="btn-product">
-                            <p className="flex py-1 border-b-2 border-transparent hover:border-[#A69689]">SẢN PHẨM</p>
+                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">Thực đơn</p>
                         </Link>
                         <Link href="/news">
-                            <p className="flex py-1 border-b-2 border-transparent hover:border-[#A69689]">TIN TỨC</p>
+                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TIN TỨC</p>
                         </Link>
                         <Link href="/about">
-                            <p className="flex py-1 border-b-2 border-transparent hover:border-[#A69689]">
+                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">
                                 VỀ CHÚNG TÔI
                             </p>
                         </Link>
                         <Link href="/contact">
-                            <p className="flex py-1 border-b-2 border-transparent hover:border-[#A69689]">LIÊN HỆ</p>
+                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">LIÊN HỆ</p>
                         </Link>
                     </section>
 
-                    <section className="relative rounded-50 border border-black hidden md:hidden xl:flex p-1">
+                    <section className="relative bg-white rounded-50 border border-[#A69689] hidden -mt-2 md:hidden xl:flex p-1">
                         <input
-                            className="rounded-50 border-none mr-5 pl-3 pr-16 py-1 text-sm placeholder:text-sm font-medium"
-                            placeholder="Tìm kiếm sản phẩm"
+                            className="rounded-50 border-none font-iCielBCLivory mr-5 pl-3 pr-16 py-1 text-sm placeholder:text-sm font-medium"
+                            placeholder="Tìm kiếm"
                             defaultValue={search}
                             onChange={(event) => setSearchValue(event?.target?.value?.trim())}
                             onKeyDown={(event) => {
@@ -167,119 +167,14 @@ function HeaderUser() {
                             onClick={searchProduct}
                         />
                     </section>
-                    {!!userInfo ? (
-                        <section className="flex gap-1 lg:gap-3 pr-3">
-                            <Link href={'/user/cart'} id="btn-cart">
-                                <button className="hover:bg-hover-header p-1.5 lg:p-2.5 rounded-10">
-                                    <img
-                                        className="lg:w-5 w-4 h-4 lg:h-5"
-                                        src="/assets/svg/cart.svg"
-                                        alt="arrow icon"
-                                    />
-                                </button>
-                            </Link>
-                            <div className="relative">
-                                <button
-                                    id="noti"
-                                    className="hover:bg-hover-header p-1.5 lg:p-2.5 rounded-10 relative"
-                                    onClick={() => {
-                                        setStateShowNotification(!stateShowNotification);
-                                    }}
-                                >
-                                    {notificationData.some((item) => !item.isRead) && (
-                                        <div className="absolute right-2 top-1 w-2 h-2 bg-primary rounded-full item-read"></div>
-                                    )}
-                                    <img
-                                        className="lg:w-5 w-4 h-4 lg:h-5"
-                                        src="/assets/svg/bell.svg"
-                                        alt="arrow icon"
-                                    />
-                                </button>
-                                {stateShowNotification && (
-                                    <div className="absolute w-96 right-0 bg-white rounded-lg p-5 shadow z-20">
-                                        <div className="flex justify-between items-center">
-                                            <h1 className="font-semibold text-lg">Thông báo</h1>
-                                            <button
-                                                onClick={handleReadNotification}
-                                                className="text-xs text-primary font-light z-50"
-                                            >
-                                                Đánh dấu đã đọc tất cả
-                                            </button>
-                                        </div>
-                                        <div
-                                            className="fixed bg-none w-screen h-screen top-0 left-0 bottom-0 right-0 z-2"
-                                            onClick={() => {
-                                                setStateShowNotification(false);
-                                            }}
-                                        ></div>
-                                        <ul className="max-h-96 overflow-y-scroll relative bg-white z-50">
-                                            {notificationData &&
-                                                notificationData.map((notification) => (
-                                                    <li
-                                                        key={notification.notificationId}
-                                                        className="flex justify-start gap-4 items-center py-2"
-                                                    >
-                                                        {notification.isRead === true ? (
-                                                            <p className="w-2 h-2"></p>
-                                                        ) : (
-                                                            <img
-                                                                src="/assets/svg/dot.svg"
-                                                                className="w-2 h-2"
-                                                                alt="notification not read"
-                                                            />
-                                                        )}
-                                                        <div className=" border-solid border-0 border-b border-gray-500 w-11/12">
-                                                            <p className="text-xs font-light line-clamp-2">
-                                                                {notification.message}
-                                                            </p>
-                                                            <span className="text-xs font-light text-primary ">
-                                                                {formateDateTimeVN(notification.createdAt).datePart +
-                                                                    ' ' +
-                                                                    formateDateTimeVN(notification.createdAt).timePart}
-                                                            </span>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                        </ul>
-                                    </div>
-                                )}
-                            </div>
-
-                            <Dropdown
-                                menu={{
-                                    items: itemsProfile(Logout),
-                                }}
-                                className="group"
-                                placement="bottomLeft"
-                            >
-                                <button className="hover:bg-hover-header p-1.5 lg:p-2.5 rounded-10" id="profile-icon">
-                                    <img
-                                        className="lg:w-5 w-4 h-4 lg:h-5"
-                                        src="/assets/svg/user.svg"
-                                        alt="arrow icon"
-                                    />
-                                </button>
-                            </Dropdown>
-                        </section>
-                    ) : (
-                        <section className="flex">
-                            <Link href="/auth/login">
-                                <p className="py-1 px-2 lg:px-4 rounded-10">ĐĂNG NHẬP</p>
-                            </Link>
-                            <div className="border-r border-black"></div>
-                            <Link href="/auth/register">
-                                <p className="py-1 px-2 lg:px-4 rounded-10">ĐĂNG KÝ</p>
-                            </Link>
-                        </section>
-                    )}
                 </div>
-                <div className="max-sm:flex hidden w-4 h-4 my-auto mr-4">
+                <div className="max-sm:flex hidden w-8 h-8 my-auto mr-4">
                     <img src="/assets/svg/mobile.svg" alt="icon" onClick={showDrawer} />
                 </div>
             </div>
-            <div className="relative max-sm:flex rounded-50 border border-black p-1 mb-6 mx-4 lg:hidden">
+            <div className="relative bg-white max-sm:flex rounded-50 border border-[#A69689] p-1 mb-6 mx-4 lg:hidden">
                 <input
-                    className="rounded-50 border-none w-full mr-5 pl-3 pr-16 py-1 text-sm placeholder:text-sm font-medium"
+                    className="rounded-50 border-none font-iCielBCLivory w-full mr-5 pl-3 pr-16 py-1 text-sm placeholder:text-sm font-medium"
                     placeholder="Tìm kiếm sản phẩm"
                     defaultValue={search}
                     onChange={(event) => setSearchValue(event?.target?.value?.trim())}
@@ -436,6 +331,7 @@ function HeaderUser() {
                 )}
             </Drawer>
         </header>
+
     );
 }
 

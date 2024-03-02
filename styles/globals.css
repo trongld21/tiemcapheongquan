@@ -2,12 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '~react-image-gallery/styles/css/image-gallery.css';
+
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter Font Family/Inter/Inter-V.ttf');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700,800');
+
+@font-face {
+    font-family: 'iCielBCCartelDeuxAlt';
+    src: url('../public/assets/fonts/iCielBCCartelDeux-Alt.woff') format('woff');
+}
+
+.font-iCielBCCartelDeuxAlt {
+    font-family: iCielBCCartelDeuxAlt, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCHolidaySerif';
+    src: url('../public/assets/fonts/iCielBCHolidaySerif-Regular.woff') format('woff');
+}
+
+.font-iCielBCHolidaySerif {
+    font-family: iCielBCHolidaySerif, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCLeJeunePoster';
+    src: url('../public/assets/fonts/iCielBCLeJeunePoster-Light.woff') format('woff');
+}
+
+.font-iCielBCLeJeunePoster {
+    font-family: iCielBCLeJeunePoster, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCLivory';
+    src: url('../public/assets/fonts/iCielBCLivory-Regular.woff') format('woff');
+}
+
+.font-iCielBCLivory {
+    font-family: iCielBCLivory, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCBjola';
+    src: url('../public/assets/fonts/iCielBCBjola-Black.woff') format('woff');
+}
+
+.font-iCielBCBjola {
+    font-family: iCielBCBjola, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCDowntown';
+    src: url('../public/assets/fonts/iCielBCDowntown-Regular.woff') format('woff');
+}
+
+.font-iCielBCDowntown {
+    font-family: iCielBCDowntown, serif;
+}
+
+@font-face {
+    font-family: 'iCielBCQuotesCaps';
+    src: url('../public/assets/fonts/iCielBCQuotesCaps-Regular.woff') format('woff');
+}
+
+.font-iCielBCQuotesCaps {
+    font-family: iCielBCQuotesCaps, serif;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -831,4 +896,14 @@ input:-webkit-autofill:active {
 
 :where(.css-dev-only-do-not-override-1wazalj).ant-rate .ant-rate-star:not(:last-child) {
     margin-inline-end: 3px;
+}
+
+.main-section {
+    background: url('../public/assets/images/tiemcapheongquan/2.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 0% 40%;
+    position: relative;
 }

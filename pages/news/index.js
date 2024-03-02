@@ -54,7 +54,7 @@ function News() {
                 {dataAllArticle?.length != 0 ? (
                     <div className="flex flex-col gap-8 lg:gap-16">
                         <section className="flex gap-6 lg:gap-11 items-center">
-                            <p className="text-base my-auto font-semibold text-[#00000080]">Sắp xếp:</p>
+                            <p className="text-2xl my-auto font-semibold text-[#00000080] font-iCielBCCartelDeuxAlt">Sắp xếp:</p>
                             <div className="w-2/12 max-sm:w-4/12">
                                 <CustomSort sort={sort} setSort={setSort} sortOption={sortArticleOptions} />
                             </div>
@@ -79,11 +79,11 @@ function News() {
                 ) : (
                     <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={'Chưa có tin tức'} />
                 )}
-                <CustomPagination
+                {/* <CustomPagination
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     totalPages={Number(dataAllArticle?.totalPages)}
-                />
+                /> */}
             </NewsLayout>
         </UserLayout>
     );

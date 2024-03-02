@@ -39,7 +39,7 @@ function NewsDetail() {
             <section className="w-10/12 max-sm:w-11/12 m-auto mt-10">
                 <button type="button" onClick={() => router.push('/news')} className="flex gap-4 items-center">
                     <img src="/assets/svg/arrow_left.svg" alt="arrow icon" />
-                    <p className="my-auto text-lg font-semibold">Về trang tin tức</p>
+                    <p className="my-auto text-2xl font-semibold text-[#00000080] font-iCielBCCartelDeuxAlt">Về trang tin tức</p>
                 </button>
             </section>
             <NewsLayout>

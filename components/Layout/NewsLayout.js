@@ -23,7 +23,7 @@ const NewsLayout = ({ children }) => {
             {dataOldArticle?.length != 0 && (
                 <section className="w-full lg:w-1/4 flex flex-col gap-16">
                     <div className="lg:flex flex-col gap-9 hidden">
-                        <p className="text-xl font-semibold">Tin gần đây</p>
+                        <p className="text-2xl text-[#00000080] font-semibold font-iCielBCCartelDeuxAlt">Tin gần đây</p>
                         <div className="flex flex-col gap-7">
                             {dataOldArticle &&
                                 dataOldArticle.map((item) => (
