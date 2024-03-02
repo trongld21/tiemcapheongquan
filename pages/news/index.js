@@ -33,9 +33,9 @@ function News() {
 
     const fetchData = async () => {
         try {
-            const res = await apiArticle.GetAll(sort, currentPage, reviewPerPage);
-            if (res && res?.success) {
-                setDataAllArticle(res?.data);
+            const res = await apiArticle.GetAll();
+            if (res) {
+                setDataAllArticle(res);
             }
         } catch (error) {
             console.log('🚀 ~ file: [productSlug].js:491 ~ fetchArticle ~ error:', error);
@@ -51,7 +51,7 @@ function News() {
         <UserLayout>
             <Thumbnail title={'Tin tức'} />
             <NewsLayout>
-                {dataAllArticle?.articles?.length != 0 ? (
+                {dataAllArticle?.length != 0 ? (
                     <div className="flex flex-col gap-8 lg:gap-16">
                         <section className="flex gap-6 lg:gap-11 items-center">
                             <p className="text-base my-auto font-semibold text-[#00000080]">Sắp xếp:</p>
@@ -62,15 +62,15 @@ function News() {
 
                         <section className="flex flex-col gap-10">
                             {dataAllArticle &&
-                                dataAllArticle?.articles?.map((item) => (
+                                dataAllArticle?.map((item) => (
                                     <NewsCard
-                                        key={item.articleId}
+                                        key={item.id}
                                         title={item.title}
                                         imgUrl={item.thumbnail}
                                         date={formateDateTime(item.createdAt).datePart}
                                         actor={item.userName}
                                         description={item.content}
-                                        id={item.articleId}
+                                        id={item.id}
                                         slug={item.slug}
                                     />
                                 ))}
