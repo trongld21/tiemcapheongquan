@@ -24,6 +24,10 @@ import useNotification from '@/hooks/useNotification';
 import getServerSideProps from '@/lib/adminServerProps';
 import managerModelAPI from '@/pages/api/manager/managerModelAPI';
 
+// Firebase
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     ssr: false,
     loading: () => <p>Loading ...</p>,

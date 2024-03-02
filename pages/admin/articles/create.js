@@ -16,6 +16,7 @@ import useNotification from '@/hooks/useNotification';
 import apiArticle from '@/pages/api/apiArticle';
 // firebase component
 import { getDownloadURL, ref, uploadBytes } from '@firebase/storage';
+
 import DOMPurify from 'dompurify';
 import { v4 as uuidv4 } from 'uuid';
 import { storage } from '../../../firebase';
@@ -184,18 +185,19 @@ function CreateArticle() {
             try {
                 const imageURL = await handleUploadImage(articleInfo.thumbnails);
                 const res = await apiArticle.CreateArticle(articleInfo.title, valueFromEditor, imageURL);
-                if (res.success) {
-                    showSuccess(
-                        'Tạo bài viết mới thành công',
-                        'Bạn sẽ được chuyển hướng đến trang liệt kê bài viết',
-                        3,
-                    );
-                    router.push('/admin/articles');
-                }
-                // Check if any error
-                else {
-                    showError('Không thể tạo bài viết mới', 'Một số lỗi xảy ra khi tạo bài viết', 5);
-                }
+                console.log(res)
+                // if (res.success) {
+                //     showSuccess(
+                //         'Tạo bài viết mới thành công',
+                //         'Bạn sẽ được chuyển hướng đến trang liệt kê bài viết',
+                //         3,
+                //     );
+                //     router.push('/admin/articles');
+                // }
+                // // Check if any error
+                // else {
+                //     showError('Không thể tạo bài viết mới', 'Một số lỗi xảy ra khi tạo bài viết', 5);
+                // }
             } catch (error) {
                 console.log('🚀 ~ file: create.js:112 ~ handleCreateArticle ~ error:', error);
             }

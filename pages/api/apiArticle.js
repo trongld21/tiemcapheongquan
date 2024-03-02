@@ -1,4 +1,8 @@
+import { firestore } from '@/firebase';
 import useAxios from '@/hooks/useAxios';
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const apiArticle = {
     // Get all article api
@@ -89,37 +93,17 @@ const apiArticle = {
     },
     // Public article
     CreateArticle: async (title, content, thumbnail) => {
-        const axios = useAxios();
-        try {
-            const url = '/ManagementArticles/Create';
-            const data = { title, content, thumbnail };
-            const res = await axios.post(url, data);
-            if (res.status) {
-                return res.data;
-            } else {
-                return false;
-            }
-        } catch (error) {
-            // Handle the error
-            return error.message;
-        }
+
+        const blogCollection = collection(firestore, "blogs");
+        await addDoc(blogCollection, {
+            title: title,
+            content: content,
+            thumbnail: thumbnail,
+        });
     },
     // Public article
     UpdateArticle: async (articleId, title, content, thumbnail) => {
-        const axios = useAxios();
-        try {
-            const url = `/ManagementArticles/Update/${articleId}`;
-            const data = { articleId, title, content, thumbnail };
-            const res = await axios.put(url, data);
-            if (res.status) {
-                return res.data;
-            } else {
-                return false;
-            }
-        } catch (error) {
-            // Handle the error
-            return error.message;
-        }
+
     },
 };
 
