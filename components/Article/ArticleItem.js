@@ -74,13 +74,13 @@ const ArticleItem = ({ urlThumbnail, title, author, createdDate, description, sl
                 <div className="flex justify-between items-center">
                     <div className="flex flex-start gap-3 lg:gap-6">
                         <Link
-                            href={`/admin/articles/detail/${slug}`}
+                            href={`/admin/articles/detail/${id}`}
                             className="text-sm rounded-md flex justify-center items-center font-normal lg:font-semibold border border-black w-32 h-9"
                         >
                             Xem chi tiết
                         </Link>
                         <Link
-                            href={`/admin/articles/edit/${slug}`}
+                            href={`/admin/articles/edit/${id}`}
                             className="w-fit h-fit flex gap-2 justify-center items-center bg-black text-white px-2.5 py-1.5 rounded-md"
                         >
                             <img src="/assets/svg/pencil_white.svg" alt="icon" />

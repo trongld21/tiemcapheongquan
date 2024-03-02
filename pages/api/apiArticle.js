@@ -1,72 +1,75 @@
+import { firestore } from '@/firebase';
 import useAxios from '@/hooks/useAxios';
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore';
+import { v4 as uuidv4 } from 'uuid';
 
 const apiArticle = {
     // Get all article api
     GetAllArticle: async () => {
-        const axios = useAxios();
         try {
-            const url = '/Articles/GetAll';
-            const res = await axios.get(url);
-            // Check response from api
-            if (res.status) {
-                return res.data;
-            } else {
-                console.log('Error');
-            }
+            const querySnapshot = await getDocs(
+                collection(firestore, "blogs")
+            );
+            const blogList = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            console.log(blogList);
+            return blogList;
         } catch (error) {
-            // Handle the error
-            return error.message;
+            return [];
+            console.log(error)
         }
     },
     // Get all article api for admin role
     GetAllArticleAdmin: async () => {
-        const axios = useAxios();
         try {
-            const url = '/ManagementArticles/GetAll';
-            const res = await axios.get(url);
-            // Check response from api
-            if (res.status) {
-                return res.data;
-            } else {
-                console.log('Error');
-            }
+            const querySnapshot = await getDocs(
+                collection(firestore, "blogs")
+            );
+            const blogList = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            // console.log(blogList);
+            return blogList;
         } catch (error) {
-            // Handle the error
-            return error.message;
+            console.log(error);
+            return [];
         }
     },
     // Get all article api for admin role
     GetArticleById: async (id) => {
-        const axios = useAxios();
         try {
-            const url = `/ManagementArticles/GetById/${id}`;
-            const res = await axios.get(url);
-            // Check response from api
-            if (res.status && res.status === 200) {
-                return res.data;
+            const blog = await getDoc(
+                doc(firestore, "blogs", id)
+            );
+
+            if (blog.exists()) {
+                const articleData = {
+                    id: blog.id,
+                    ...blog.data(),
+                };
+                console.log(articleData);
+                return articleData;
             } else {
-                console.log('Error');
+                return null; // Document with the specified ID does not exist
             }
         } catch (error) {
-            // Handle the error
-            return error.message;
+            console.error(error);
+            return null; // Handle the error appropriately
         }
     },
     // Delete article by id
     DeleteArticleById: async (id) => {
-        const axios = useAxios();
         try {
-            const url = `/ManagementArticles/Delete/${id}`;
-            const res = await axios.delete(url);
-            // Check response from api
-            if (res.status === 200) {
-                return res.data;
-            } else {
-                return false;
-            }
+            const blogDoc = doc(firestore, 'blogs', id);
+            await deleteDoc(blogDoc);
+            console.log(`Document with ID ${id} deleted successfully`);
+            return true;
         } catch (error) {
-            // Handle the error
-            return error.message;
+            console.error(`Error deleting document with ID ${id}:`, error);
+            return false;
         }
     },
     // Public article
@@ -89,38 +92,23 @@ const apiArticle = {
     },
     // Public article
     CreateArticle: async (title, content, thumbnail) => {
-        const axios = useAxios();
         try {
-            const url = '/ManagementArticles/Create';
-            const data = { title, content, thumbnail };
-            const res = await axios.post(url, data);
-            if (res.status) {
-                return res.data;
-            } else {
-                return false;
-            }
+            const blogCollection = collection(firestore, 'blogs');
+            await addDoc(blogCollection, {
+                title: title,
+                content: content,
+                thumbnail: thumbnail,
+                createdAt: new Date().toDateString(),
+                updatedAt: new Date().toDateString(),
+                published: true,
+            });
+            return true;
         } catch (error) {
-            // Handle the error
-            return error.message;
+            return false;
         }
     },
     // Public article
-    UpdateArticle: async (articleId, title, content, thumbnail) => {
-        const axios = useAxios();
-        try {
-            const url = `/ManagementArticles/Update/${articleId}`;
-            const data = { articleId, title, content, thumbnail };
-            const res = await axios.put(url, data);
-            if (res.status) {
-                return res.data;
-            } else {
-                return false;
-            }
-        } catch (error) {
-            // Handle the error
-            return error.message;
-        }
-    },
+    UpdateArticle: async (articleId, title, content, thumbnail) => { },
 };
 
 export default apiArticle;

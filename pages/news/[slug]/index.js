@@ -23,10 +23,9 @@ function NewsDetail() {
             if (slug) {
                 const slugId = slug?.toString();
                 const responseArticle = await apiArticle.GetBySlug(slugId);
-                if (responseArticle && responseArticle.success) {
-                    setDataArticle(responseArticle.data);
+                if (responseArticle) {
+                    setDataArticle(responseArticle);
                     setIsNotFound(false);
-                    console.log(dataArticle);
                 } else {
                     setIsNotFound(true);
                 }
@@ -59,7 +58,7 @@ function NewsDetail() {
                                 <p className="font-normal">
                                     {formateDateTime(dataArticle.createdAt).datePart}
 
-                                    <b className="text-grey ml-4">Người đăng: {dataArticle.userName}</b>
+                                    {/* <b className="text-grey ml-4">Người đăng: {dataArticle.userName}</b> */}
                                 </p>
                                 <SocialListIcon
                                     url={`${process.env.NEXT_PUBLIC_DOMAIN}/news/${slug}`}

@@ -3,9 +3,10 @@ import moment from 'moment';
 import 'moment/locale/vi';
 
 export const formatDateForInput = (dateTime) => {
-    const date = parseISO(dateTime);
-    const formattedDate = format(date, 'yyyy-MM-dd');
-    return formattedDate;
+    // const date = parseISO(dateTime);
+    // const formattedDate = format(date, 'yyyy-MM-dd');
+    // return formattedDate;
+    return dateTime;
 };
 
 export const formatDateForHtml = (dateTime) => {
@@ -14,11 +15,18 @@ export const formatDateForHtml = (dateTime) => {
 };
 
 export const formateDateTime = (text) => {
-    const dateTime = moment(text, 'YYYY-MM-DD HH:mm:ss.SSS');
-    const formattedDateString = dateTime.format('D MMMM YYYY h:mm A');
+    // Parse the input datetime string
+    const dateTime = moment(text, 'ddd MMM DD YYYY');
+
+    // Format the datetime string as desired 'D MMMM YYYY h:mm A'
+    const formattedDateString = dateTime.format('DD MMMM YYYY h:mm A');
+
+    // Split the formatted string into date and time parts
     const splittedDate = formattedDateString.split(' ');
-    const datePart = splittedDate.slice(0, 3).join(' ');
+    const datePart = splittedDate.slice(0, 4).join(' ');
     const timePart = splittedDate.slice(3).join(' ');
+
+    // Return an object containing datePart and timePart
     return {
         datePart: datePart,
         timePart: timePart,
