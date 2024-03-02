@@ -185,19 +185,18 @@ function CreateArticle() {
             try {
                 const imageURL = await handleUploadImage(articleInfo.thumbnails);
                 const res = await apiArticle.CreateArticle(articleInfo.title, valueFromEditor, imageURL);
-                console.log(res)
-                // if (res.success) {
-                //     showSuccess(
-                //         'Tạo bài viết mới thành công',
-                //         'Bạn sẽ được chuyển hướng đến trang liệt kê bài viết',
-                //         3,
-                //     );
-                //     router.push('/admin/articles');
-                // }
-                // // Check if any error
-                // else {
-                //     showError('Không thể tạo bài viết mới', 'Một số lỗi xảy ra khi tạo bài viết', 5);
-                // }
+                if (res) {
+                    showSuccess(
+                        'Tạo bài viết mới thành công',
+                        'Bạn sẽ được chuyển hướng đến trang liệt kê bài viết',
+                        3,
+                    );
+                    router.push('/admin/articles');
+                }
+                // Check if any error
+                else {
+                    showError('Không thể tạo bài viết mới', 'Một số lỗi xảy ra khi tạo bài viết', 5);
+                }
             } catch (error) {
                 console.log('🚀 ~ file: create.js:112 ~ handleCreateArticle ~ error:', error);
             }
