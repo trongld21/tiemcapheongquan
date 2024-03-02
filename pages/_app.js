@@ -6,7 +6,6 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { CookiesProvider } from 'react-cookie';
 import UserProvider from '@/contexts/userContext';
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 export default function App({ Component, pageProps: { ...pageProps } }) {
@@ -15,7 +14,6 @@ export default function App({ Component, pageProps: { ...pageProps } }) {
             <UserProvider>
                 <Component {...pageProps} />
                 <Analytics />
-                <SpeedInsights />
             </UserProvider>
         </CookiesProvider>
     );
