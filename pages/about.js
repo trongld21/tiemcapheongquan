@@ -23,7 +23,7 @@ function About() {
                     </p>
                     {/* <img src="/assets/svg/about_thumbnail.svg" alt="thumbnails" /> */}
                     <video autoPlay loop muted>
-                        <source src="/assets/video/video_tkdecor.mp4" />
+                        <source src="/assets/video/video_tiemcapheongquan.mp4" />
                     </video>
                 </section>
 
