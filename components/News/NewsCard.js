@@ -29,7 +29,7 @@ const NewsCard = ({ date, title, imgUrl, actor, description, id, slug }) => {
                     >
                         Xem thêm
                     </button>
-                    <SocialListIcon url={`${process.env.NEXT_PUBLIC_DOMAIN}/news/${slug}`} content="TKDecor" />
+                    <SocialListIcon url={`${process.env.NEXT_PUBLIC_DOMAIN}/news/${id}`} content="Tiệm Cà Phê Ông Quan" />
                 </div>
             </div>
         </div>
