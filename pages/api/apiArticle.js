@@ -72,25 +72,31 @@ const apiArticle = {
             return false;
         }
     },
+
     // Public article
     SetPublicArticle: async (articleId, published) => {
-        const axios = useAxios();
         try {
-            const url = '/ManagementArticles/SetPublish';
-            const data = { articleId, published };
-            const res = await axios.post(url, data);
-            // Check response from api
-            if (res.status === 200) {
-                return true;
-            } else {
+            const blogDoc = doc(firestore, 'blogs', articleId);
+            const articleDocSnapshot = await getDoc(blogDoc);
+
+            if (!articleDocSnapshot.exists()) {
+                // Return false if the article doesn't exist
+                console.log("apiArtical.js 119 error");
                 return false;
             }
+
+            await updateDoc(blogDoc, {
+                published: published,
+            });
+
+            return true;
         } catch (error) {
             // Handle the error
             return error.message;
         }
     },
-    // Public article
+
+    // Create article
     CreateArticle: async (title, content, thumbnail) => {
         try {
             const blogCollection = collection(firestore, 'blogs');
@@ -107,8 +113,36 @@ const apiArticle = {
             return false;
         }
     },
-    // Public article
-    UpdateArticle: async (articleId, title, content, thumbnail) => { },
-};
+
+    // Update article
+    UpdateArticle: async (articleId, title, content, thumbnail) => {
+        try {
+
+            const blogDoc = doc(firestore, 'blogs', articleId);
+            // Check if the article exists
+            const articleDocSnapshot = await getDoc(blogDoc);
+
+            if (!articleDocSnapshot.exists()) {
+                // Return false if the article doesn't exist
+                console.log("apiArtical.js 119 error");
+                return false;
+            }
+
+            // Update the article document
+            await updateDoc(blogDoc, {
+                title: title,
+                content: content,
+                thumbnail: thumbnail,
+                updatedAt: new Date().toDateString(),
+            });
+
+            return true;
+        } catch (error) {
+            // Return false if an error occurs during the update
+            console.error('Error updating article:', error);
+            return false;
+        }
+    },
+}
 
 export default apiArticle;
