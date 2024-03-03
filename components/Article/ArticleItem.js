@@ -14,6 +14,7 @@ const ArticleItem = ({ urlThumbnail, title, author, createdDate, description, sl
     const { showError, showSuccess, showWarning } = useNotification();
     const [isPublic, setIsPublic] = useState(published);
 
+
     // Show popup to confirm after delete
     const showConfirm = (id) => {
         confirm({
@@ -52,6 +53,7 @@ const ArticleItem = ({ urlThumbnail, title, author, createdDate, description, sl
             );
         }
     };
+
 
     return (
         <div className="flex group relative justify-start items-start border-solid border border-transparent hover:border-secondary rounded-10">

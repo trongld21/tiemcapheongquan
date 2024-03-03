@@ -100,7 +100,6 @@ const apiArticle = {
                 thumbnail: thumbnail,
                 createdAt: new Date().toDateString(),
                 updatedAt: new Date().toDateString(),
-                published: true,
             });
             return true;
         } catch (error) {
@@ -108,7 +107,34 @@ const apiArticle = {
         }
     },
     // Public article
-    UpdateArticle: async (articleId, title, content, thumbnail) => { },
+    UpdateArticle: async (articleId, title, content, thumbnail) => {
+        try {
+
+            const blogDoc = doc(firestore, 'blogs', articleId);
+            // Check if the article exists
+            const articleDocSnapshot = await getDoc(blogDoc);
+
+            if (!articleDocSnapshot.exists()) {
+                // Return false if the article doesn't exist
+                console.log("apiArtical.js 119 error");
+                return false;
+            }
+
+            // Update the article document
+            await updateDoc(blogDoc, {
+                title: title,
+                content: content,
+                thumbnail: thumbnail,
+                updatedAt: new Date().toDateString(),
+            });
+
+            return true;
+        } catch (error) {
+            // Return false if an error occurs during the update
+            console.error('Error updating article:', error);
+            return false;
+        }
+    },
 };
 
 export default apiArticle;

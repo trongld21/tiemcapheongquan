@@ -41,8 +41,8 @@ function EditArticle() {
     const getData = async (id) => {
         try {
             const res = await apiArticle.GetArticleById(id);
-            if (res && res.success) {
-                setData(res.data);
+            if (res) {
+                setData(res);
             }
         } catch (error) {
             console.error('Fetch Data Fail');
@@ -194,13 +194,13 @@ function EditArticle() {
                     imageURL = data.thumbnail;
                 }
                 const res = await apiArticle.UpdateArticle(
-                    data.articleId,
+                    data.id,
                     articleInfo.title,
                     valueFromEditor,
                     imageURL,
                 );
                 // Check return is
-                if (res.success) {
+                if (res) {
                     showSuccess(
                         'Cập nhật bài viết thành công',
                         'Bạn sẽ được chuyển hướng đến trang liệt kê bài viết',

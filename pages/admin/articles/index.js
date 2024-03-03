@@ -103,7 +103,6 @@ function Articles() {
                 <section className="grid grid-cols-1 gap-10 items-start">
                     {data &&
                         data.map((item) => {
-                            console.log(item)
                             return (
                                 <ArticleItem
                                     key={item.id}
