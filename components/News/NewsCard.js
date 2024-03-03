@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 
 const NewsCard = ({ date, title, imgUrl, actor, description, id, slug }) => {
     const router = useRouter();
-    const handleNewDetail = (slug) => {
+    const handleNewDetail = (id) => {
         //go product detail page by id
-        router.push(`/news/${slug}`);
+        router.push(`/news/${id}`);
     };
     return (
         <div className="w-full max-sm:pb-5 pb-10 flex justify-between max-sm:gap-5 gap-10 items-center last:border-none border-b border-[#00000080]">
@@ -17,7 +17,6 @@ const NewsCard = ({ date, title, imgUrl, actor, description, id, slug }) => {
                 <div className="flex flex-col items-start">
                     <p className="max-sm:text-xs text-grey text-sm">{date}</p>
                     <h4 className="font-bold uppercase max-sm:text-sm text-2xl lg:text-3xl m-0 ">{title}</h4>
-                    <p className="font-medium text-secondary text-sm my-1 max-sm:text-xs">Người đăng: {actor}</p>
                     <p
                         className="font-normal text-sm mt-3 max-sm:line-clamp-2 line-clamp-5 max-sm:hidden"
                         dangerouslySetInnerHTML={{ __html: description }}
@@ -26,7 +25,7 @@ const NewsCard = ({ date, title, imgUrl, actor, description, id, slug }) => {
                 <div className="flex flex-row gap-2 w-full max-md:items-center items-start justify-between lg:gap-2 max-sm:flex-col max-sm:items-start">
                     <button
                         className="py-2 px-4 lg:px-6 w-fit font-bold text-xs rounded lg:text-sm bg-transparent border border-black hover:bg-primary hover:text-white hover:border-white"
-                        onClick={() => handleNewDetail(slug)}
+                        onClick={() => handleNewDetail(id)}
                     >
                         Xem thêm
                     </button>

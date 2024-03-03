@@ -1,30 +1,43 @@
+import { firestore } from '@/firebase';
 import useAxios from '@/hooks/useAxios';
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore';
 
 const apiArticles = {
-    GetAll: async (sort, pageIndex = 1, pageSize = 20) => {
-        const axios = useAxios();
+    GetAll: async () => {
         try {
-            const response = await axios.get(
-                `/Articles/GetAll?sort=${sort}&pageIndex=${pageIndex}&pageSize=${pageSize}`,
+            const querySnapshot = await getDocs(
+                collection(firestore, "blogs")
             );
-            if (response) {
-                return response.data;
-            } else {
-                console.log('Error');
-            }
+            const blogList = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            console.log(blogList);
+            return blogList;
         } catch (error) {
-            return error.response;
+            return [];
+            console.log(error)
         }
     },
-    GetBySlug: async (slug) => {
-        const axios = useAxios();
+    GetBySlug: async (id) => {
         try {
-            const response = await axios.get(`/Articles/GetBySlug/${slug}`);
-            if (response) {
-                return response.data;
+            const blog = await getDoc(
+                doc(firestore, "blogs", id)
+            );
+
+            if (blog.exists()) {
+                const articleData = {
+                    id: blog.id,
+                    ...blog.data(),
+                };
+                console.log(articleData);
+                return articleData;
+            } else {
+                return null;
             }
         } catch (error) {
-            return error;
+            console.error(error);
+            return null;
         }
     },
 };

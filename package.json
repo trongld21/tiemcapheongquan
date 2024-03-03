@@ -20,6 +20,8 @@
         "@react-three/fiber": "^8.13.7",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/line-clamp": "^0.4.4",
+        "@vercel/analytics": "^1.2.2",
+        "@vercel/speed-insights": "^1.0.10",
         "antd": "^5.6.1",
         "axios": "^1.4.0",
         "axios-middleware": "^0.3.1",

@@ -10,9 +10,9 @@ const NewsLayout = ({ children }) => {
     const [dataOldArticle, setDataOldArticle] = useState();
     useEffect(() => {
         const fetchData = async () => {
-            const responseArticle = await apiArticle.GetAll('', 1, 3);
+            const responseArticle = await apiArticle.GetAll();
             if (responseArticle) {
-                setDataOldArticle(responseArticle.data.articles);
+                setDataOldArticle(responseArticle);
             }
         };
         fetchData();
