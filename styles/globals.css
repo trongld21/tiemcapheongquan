@@ -116,15 +116,15 @@ body {
     background-color: #a69689;
 }
 
-.icon-arrow-paginate > img {
+.icon-arrow-paginate>img {
     filter: invert(60%) sepia(10%) saturate(499%) hue-rotate(345deg) brightness(100%) contrast(86%);
 }
 
-.arrow-prev > img {
+.arrow-prev>img {
     margin-left: -3px;
 }
 
-.arrow-next > img {
+.arrow-next>img {
     margin-left: 3px;
 }
 
@@ -199,11 +199,11 @@ input:-webkit-autofill:active {
     display: none;
 }
 
-.avatar-wrapper > .ant-upload-wrapper .ant-upload-drag .ant-upload {
+.avatar-wrapper>.ant-upload-wrapper .ant-upload-drag .ant-upload {
     padding: 0px;
 }
 
-.avatar-wrapper > .ant-upload-wrapper .ant-upload-drag {
+.avatar-wrapper>.ant-upload-wrapper .ant-upload-drag {
     border-radius: 100%;
     width: 112px;
 }
@@ -281,8 +281,7 @@ input:-webkit-autofill:active {
     animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-timing-function: linear;
-    filter: drop-shadow(-2px 2px 2px rgba(255, 0, 0, 0.8)) drop-shadow(2px 2px 2px rgba(255, 255, 0, 0.8))
-        drop-shadow(-2px -2px 2px rgba(0, 4, 255, 0.8));
+    filter: drop-shadow(-2px 2px 2px rgba(255, 0, 0, 0.8)) drop-shadow(2px 2px 2px rgba(255, 255, 0, 0.8)) drop-shadow(-2px -2px 2px rgba(0, 4, 255, 0.8));
 }
 
 @keyframes animation_logo {
@@ -766,8 +765,7 @@ input:-webkit-autofill:active {
     color: aqua;
 }
 
-.custom-link {
-}
+.custom-link {}
 
 .button {
     --offset: 10px;
@@ -864,17 +862,17 @@ input:-webkit-autofill:active {
     transform: scale(1.1);
 }
 
-.ant-upload-list .ant-upload > div > div {
+.ant-upload-list .ant-upload>div>div {
     display: none;
 }
 
-.ant-upload-list .ant-upload > div {
+.ant-upload-list .ant-upload>div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.ant-upload-list .ant-upload > div::after {
+.ant-upload-list .ant-upload>div::after {
     content: 'Tải lên' !important;
 }
 
@@ -906,4 +904,9 @@ input:-webkit-autofill:active {
     background-size: cover;
     background-position: 0% 40%;
     position: relative;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 86px !important;
 }

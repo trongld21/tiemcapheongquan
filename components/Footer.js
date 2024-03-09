@@ -11,14 +11,14 @@ function Footer() {
     return (
         <section className="w-full bg-[#594633]">
             <footer className="bg-[#594633] w-full min-h-[20rem] p-16">
-                <div className="grid grid-cols-4">
-                    <div className="flex flex-col justify-start items-start gap-2">
+                <div className="grid md:grid-cols-4 sm:grid-cols-2 mb-12 gap-6">
+                    <div className="flex md:flex-col justify-start items-center md:items-start gap-2 col-span-2 md:col-span-1">
                         <img src="/assets/images/tiemcapheongquan/logo.png" className="w-28" alt="logo tiệm cà phê ông quan" />
-                        <h1 className="uppercase text-[#F1E8C7] font-normal text-3xl font-iCielBCHolidaySerif">
+                        <h1 className="uppercase text-[#F1E8C7] font-normal text-4xl md:text-3xl font-iCielBCHolidaySerif">
                             Tiệm Cà Phê Ông Quan
                         </h1>
                     </div>
-                    <div>
+                    <div className='col-span-2 md:col-span-1'>
                         <h1 className="uppercase text-[#F1E8C7] font-normal text-3xl font-iCielBCHolidaySerif">Giới thiệu</h1>
                         <Link href="javascript:void(0)" className="block text-[#F1E8C7] font-normal text-xl leading-[128%] tracking-wider font-iCielBCLivory">Về chúng tôi</Link>
                         <Link href="javascript:void(0)" className="block text-[#F1E8C7] font-normal text-xl leading-[128%] tracking-wider font-iCielBCLivory">Ưu đãi</Link>

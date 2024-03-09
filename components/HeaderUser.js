@@ -119,31 +119,31 @@ function HeaderUser() {
     };
 
     return (
-        <header className="flex max-sm:flex-col md:flex-col lg:px-2 lg:h-[70px] z-50 shadow sticky top-0 h-fit bg-[#594633] justify-between items-center px-8">
+        <header className="flex max-md:flex-col md:flex-col lg:px-2 lg:h-[80px] z-50 shadow sticky top-0 h-fit bg-[#594633] justify-between items-center px-8">
             <div className="flex justify-between pt-[1rem] pb-5 lg:px-2 w-full">
                 <div className="w-1/6 max-sm:w-full flex items-center">
                     <Link href="/" className="ml-8">
                         <img className="h-12 scale-150" src="/assets/images/tiemcapheongquan/logo.png" alt="logo tiệm cà phê ông quan" />
                     </Link>
                 </div>
-                <div className="w-5/6 lg:w-4/5 max-sm:hidden flex text-xs xl:text-sm font-bold items-center justify-between px-2">
-                    <section className="flex justify-between gap-16">
+                <div className="w-5/6 lg:w-4/5 max-sm:hidden flex text-xs xl:text-sm font-bold items-center justify-around px-2">
+                    <section className="flex justify-between gap-4 md:gap-8 lg:gap-16">
                         <Link href="/">
-                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TRANG CHỦ</p>
+                            <p className="font-medium lg:text-lg sm:text-sm  text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TRANG CHỦ</p>
                         </Link>
                         <Link href="/product" id="btn-product">
-                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">Thực đơn</p>
+                            <p className="font-medium lg:text-lg sm:text-sm  text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">Thực đơn</p>
                         </Link>
                         <Link href="/news">
-                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TIN TỨC</p>
+                            <p className="font-medium lg:text-lg sm:text-sm  text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">TIN TỨC</p>
                         </Link>
                         <Link href="/about">
-                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">
+                            <p className="font-medium lg:text-lg sm:text-sm  text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">
                                 VỀ CHÚNG TÔI
                             </p>
                         </Link>
                         <Link href="/contact">
-                            <p className="font-medium text-xl text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">LIÊN HỆ</p>
+                            <p className="font-medium lg:text-lg sm:text-sm  text-[#F1E8C7] font-iCielBCCartelDeuxAlt border-b-2 border-transparent hover:border-[#A69689] uppercase">LIÊN HỆ</p>
                         </Link>
                     </section>
 

@@ -160,10 +160,10 @@ function Home({ isLogged }) {
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#594633] opacity-[0.59]"></div>
 
                     <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-3">
-                        <h1 className="uppercase text-white font-normal text-9xl font-iCielBCHolidaySerif">
+                        <h1 className="uppercase text-white font-normal text-center md:text-start text-7xl md:text-9xl font-iCielBCHolidaySerif">
                             Tiệm Cà Phê Ông Quan
                         </h1>
-                        <h2 className="text-[#F1E8C7] text-3xl font-light font-iCielBCLeJeunePoster">
+                        <h2 className="text-[#F1E8C7] text-3xl text-center md:text-start font-light font-iCielBCLeJeunePoster">
                             Không chỉ là coffee, chúng tôi bán với sự trải nghiệm
                         </h2>
                         <button className="bg-[#F1E8C7] text-[#594633] text-lg px-7 py-3 uppercase font-medium font-iCielBCCartelDeuxAlt">
@@ -171,15 +171,15 @@ function Home({ isLogged }) {
                         </button>
                     </div>
                 </div>
-                <div className="p-16">
-                    <div className="flex flex-col justify-center items-center gap-12 pb-12">
+                <div className="p-8 md:p-16">
+                    <div className="flex flex-col justify-center items-center gap-6 md:gap-12 pb-12">
                         <h3 className="uppercase text-[#594633] text-xl font-iCielBCLivory">
                             trải nghiệm
                         </h3>
-                        <h1 className="uppercase text-[#594633] font-normal text-6xl font-iCielBCBjola">
+                        <h1 className="uppercase text-[#594633] font-normal text-3xl md:text-6xl font-iCielBCBjola">
                             Về không gian
                         </h1>
-                        <p className="text-center text-lg font-normal text-[#594633] leading-[128%] tracking-wider font-iCielBCLivory">
+                        <p className="md:text-center text-justify text-lg font-normal text-[#594633] leading-[128%] tracking-wider font-iCielBCLivory">
                             Tiệm Cà Phê Ông Quan là một ẩn mình trong lòng Cần Thơ, mang đến cho
                             bạn một trải nghiệm độc đáo với không gian lấy cảm hứng từ vẻ đẹp
                             của Đà Lạt. Với tông màu ấm áp và thoải mái, chúng tôi đã thiết kế
@@ -200,10 +200,10 @@ function Home({ isLogged }) {
                         <img src="/assets/images/tiemcapheongquan/best_seller.png" className="w-96" alt="cà phê sữa best seller" />
                     </div>
                     <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-7 z-[2]">
-                        <h1 className="uppercase text-[#F1E8C7] font-normal text-9xl font-iCielBCBjola">
+                        <h1 className="uppercase text-[#F1E8C7] font-normal text-5xl md:text-9xl font-iCielBCBjola">
                             BEST SELLER #1
                         </h1>
-                        <h2 className="text-[#F1E8C7] text-6xl font-light font-iCielBCDowntown">
+                        <h2 className="text-[#F1E8C7] text-4xl md:text-6xl font-light font-iCielBCDowntown">
                             CÀ PHÊ SỮA
                         </h2>
                         <button className="bg-[#F1E8C7] text-[#594633] text-lg px-7 py-3 uppercase font-medium font-iCielBCCartelDeuxAlt">
@@ -211,46 +211,46 @@ function Home({ isLogged }) {
                         </button>
                     </div>
                 </div>
-                <div className="w-full min-h-[50rem] px-16 pt-16 pb-8">
+                <div className="w-full min-h-[50rem] px-8 md:px-16 pt-16 pb-8">
                     <div className="pb-12">
                         <div className="flex flex-col justify-center items-center gap-12 pb-20">
-                            <h1 className="uppercase text-[#594633] font-normal text-6xl font-iCielBCBjola">
+                            <h1 className="uppercase text-[#594633] font-normal text-4xl md:text-6xl font-iCielBCBjola">
                                 Thực đơn có gì?
                             </h1>
-                            <div className="flex justify-center items-center gap-8">
+                            <div className="flex justify-center items-center gap-8 flex-wrap">
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt border-b-4 border-[#594633]"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt border-b-4 border-[#594633]"
                                 >
                                     Cà Phê
                                 </Link>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
                                 >
                                     Trà
                                 </Link>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
                                 >
                                     Sữa Chua
                                 </Link>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
                                 >
                                     Cacao
                                 </Link>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
                                 >
                                     Đá Xay
                                 </Link>
                                 <Link
                                     href="javascript:void(0)"
-                                    className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
+                                    className="font-medium text-lg md:text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt opacity-70"
                                 >
                                     Khác
                                 </Link>
@@ -259,14 +259,27 @@ function Home({ isLogged }) {
                         <Swiper
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
                             spaceBetween={50}
-                            slidesPerView={3}
+                            slidesPerView={1}
+
                             navigation
                             pagination={{ clickable: true }}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log("slide change")}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                    centeredSlides: true,
+                                },
+                                1025: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 40,
+                                },
+                            }}
+                            className='text-center'
                         >
                             <SwiperSlide>
-                                <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                <div className="mx-auto w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                     <img src="/assets/images/tiemcapheongquan/product_1.png" className="w-40" alt="món cà phê" />
                                 </div>
                                 <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -277,7 +290,7 @@ function Home({ isLogged }) {
                                 </h3>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                <div className="mx-auto w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                     <img src="/assets/images/tiemcapheongquan/product_2.png" className="w-40" alt="món cà phê" />
                                 </div>
                                 <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -288,7 +301,7 @@ function Home({ isLogged }) {
                                 </h3>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                <div className="mx-auto w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                     <img src="/assets/images/tiemcapheongquan/product_3.png" className="w-40" alt="món cà phê" />
                                 </div>
                                 <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -299,7 +312,7 @@ function Home({ isLogged }) {
                                 </h3>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                <div className="mx-auto w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                     <img src="/assets/images/tiemcapheongquan/product_1.png" className="w-40" alt="món cà phê" />
                                 </div>
                                 <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -312,17 +325,17 @@ function Home({ isLogged }) {
                         </Swiper>
                     </div>
                 </div>
-                <div className="w-full min-h-[10rem] px-16">
-                    <div className="pb-8">
+                <div className="w-full min-h-[10rem] px-12 md:px-16">
+                    <div className="md:pb-8">
                         <div className="flex flex-col justify-center items-center gap-12 pb-20">
                             <h1 className="uppercase text-[#594633] font-normal text-4xl font-iCielBCBjola">
                                 Cùng với những ưu đãi
                             </h1>
-                            <div className="flex justify-center items-start gap-16">
-                                <div className="flex flex-col justify-center items-center w-[40vw] gap-2">
+                            <div className="md:flex justify-center items-start gap-16">
+                                <div className="flex flex-col justify-center items-center md:w-[40vw] gap-2">
                                     <img
                                         src="/assets/images/tiemcapheongquan/content_1.png"
-                                        className="w-60 h-60 rounded-full"
+                                        className="sm:w-60 sm:h-60 w-40 h-40 rounded-full"
                                         alt="icon ưu đãi tiệm cà phê ông quan"
                                     />
                                     <h1 className="text-[#594633] text-3xl px-7 py-3 uppercase font-medium font-iCielBCCartelDeuxAlt">
@@ -338,10 +351,10 @@ function Home({ isLogged }) {
                                         chúng tôi để thưởng thức ưu đãi này ngay hôm nay!
                                     </p>
                                 </div>
-                                <div className="flex flex-col justify-center items-center w-[40vw] gap-2">
+                                <div className="flex flex-col justify-center items-center md:w-[40vw] gap-2 mt-8">
                                     <img
                                         src="/assets/images/tiemcapheongquan/content_2.png"
-                                        className="w-60 h-60 rounded-full"
+                                        className="sm:w-60 sm:h-60 w-40 h-40 rounded-full"
                                         alt="icon ưu đãi tiệm cà phê ông quan"
                                     />
                                     <h1 className="text-[#594633] text-3xl px-7 py-3 uppercase font-medium font-iCielBCCartelDeuxAlt">
@@ -366,9 +379,9 @@ function Home({ isLogged }) {
                                 BÁNH NGỌT, SAO LẠI KHÔNG?
                             </h1>
                             <div className="flex justify-center items-start gap-16">
-                                <div className="grid grid-cols-4 gap-12">
+                                <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-12">
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_1.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -379,7 +392,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_2.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -390,7 +403,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_3.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -401,7 +414,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_4.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -412,7 +425,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_5.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -423,7 +436,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_6.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -434,7 +447,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_7.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -445,7 +458,7 @@ function Home({ isLogged }) {
                                         </h3>
                                     </div>
                                     <div>
-                                        <div className="w-80 h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
+                                        <div className=" w-60 h-60 sm:w-80 sm:h-96 bg-[#B68C62] flex flex-col justify-center items-center gap-4">
                                             <img src="/assets/images/tiemcapheongquan/cake_8.png" className="w-40" alt="bánh ngọt tiệm cà phê ông quan" />
                                         </div>
                                         <h1 className="font-medium text-xl uppercase text-[#594633] font-iCielBCCartelDeuxAlt pt-6">
@@ -461,11 +474,11 @@ function Home({ isLogged }) {
                     </div>
                 </div>
                 <div className="bg-[#594633] w-full min-h-[50rem] relative overflow-y-hidden">
-                    <div class="flex flex-col justify-center items-center px-16 pt-24">
+                    <div class="flex flex-col justify-center items-center px-12 md:px-16 pt-24">
                         <h1 className="uppercase text-[#F1E8C7] font-normal text-4xl font-iCielBCBjola pb-24">
                             Vì sao chúng tôi là nơi lí tưởng cho bạn?
                         </h1>
-                        <div className="grid grid-cols-3 gap-12">
+                        <div className="grid md:grid-cols-3 gap-12">
                             <div className="flex flex-col justify-center items-center gap-8">
                                 <img src="/assets/images/tiemcapheongquan/icon_1.png" alt="icon" />
                                 <h1 className="text-[#F1E8C7] text-2xl font-iCielBCCartelDeuxAlt">
@@ -492,7 +505,7 @@ function Home({ isLogged }) {
                                     để tận hưởng không gian đẹp và thoải mái nhất.
                                 </p>
                             </div>
-                            <div className="flex flex-col justify-center items-center gap-8">
+                            <div className="flex flex-col justify-center items-center gap-8 mb-8">
                                 <img src="/assets/images/tiemcapheongquan/icon_3.png" alt="icon" />
                                 <h1 className="text-[#F1E8C7] text-2xl font-iCielBCCartelDeuxAlt">
                                     VỀ GIAO HÀNG
@@ -508,7 +521,7 @@ function Home({ isLogged }) {
                         </div>
                     </div>
                 </div>
-                <div className="w-full px-16 pt-16">
+                <div className="w-full px-12 md:px-16 pt-16">
                     <div className="pb-12">
                         <div className="flex flex-col justify-center items-center gap-12 pb-20">
                             <h1 className="uppercase text-[#594633] font-normal text-4xl font-iCielBCBjola">
